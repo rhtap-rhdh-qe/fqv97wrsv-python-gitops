@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fqv97wrsv-python-gitops
+  description: This is GitOps manifest for fqv97wrsv-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=fqv97wrsv-python
+    backstage.io/kubernetes-id: fqv97wrsv-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fqv97wrsv-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fqv97wrsv-python
